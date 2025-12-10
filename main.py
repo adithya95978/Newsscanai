@@ -35,7 +35,7 @@ templates = Jinja2Templates(directory="templates")
 
 app.mount("/static", StaticFiles(directory="static"), name="static")
 app.mount(
-    "/processed_files", StaticFiles(directory="processed_files"), name="processed_files"
+   StaticFiles(directory="correct_directory_name"
 )
 MODEL_PATH = "best_30_epochs.pt"
 UPLOAD_DIR = "uploads"
