@@ -44,7 +44,7 @@ app.mount(
     name="processed_files"
 )
 app.mount(
-   StaticFiles(directory="correct_directory_name"
+   StaticFiles(directory="correct_directory_name")
 )
 MODEL_PATH = "best_30_epochs.pt"
 UPLOAD_DIR = "uploads"
