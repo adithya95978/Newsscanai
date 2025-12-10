@@ -25,8 +25,6 @@ app = FastAPI(
     description="Web application for detecting and recognizing text in newspaper images",
     version="1.0.0",
 )
-STATIC_DIR = Path("processed_files")
-STATIC_DIR.mkdir(parents=True, exist_ok=True)
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],
@@ -38,11 +36,6 @@ app.add_middleware(
 templates = Jinja2Templates(directory="templates")
 
 app.mount("/static", StaticFiles(directory="static"), name="static")
-app.mount(
-    "/processed_files",
-    StaticFiles(directory=STATIC_DIR),
-    name="processed_files"
-)
 app.mount(
    StaticFiles(directory="correct_directory_name")
 )
